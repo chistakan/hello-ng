@@ -1,0 +1,13 @@
+<h2> Products </h2>
+
+<div *ngFor="let product of products">
+  <h3>
+    <a [routerLink]="['/product', product._id]">Name: {{product.name}}</a>
+  </h3>
+  <p *ngIf="product.description">Description: {{product.description}}</p>
+  <h4>Price: {{product.price}}</h4>
+  <app-product-notify [product]="product" (notify)="onNotify($event)"></app-product-notify>
+  <br>
+</div>
+
+<h2> Products Hot!! </h2>
