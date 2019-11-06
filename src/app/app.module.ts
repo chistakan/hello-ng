@@ -51,6 +51,10 @@ import { ComponentHtmlTableComponent } from './component-html-table/component-ht
       {
         path: 'example',
         loadChildren: 'src/app/module-example/module-example.module#ModuleExampleModule'
+      },
+      {
+        path: 'galaxy',
+        loadChildren: 'src/app/module-galaxy/module-galaxy.module#ModuleGalaxyModule'
       }
     ])
   ],
