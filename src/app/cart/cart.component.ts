@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
-import { Galaxy } from '../galaxy.model';
-import { CartService, Shipping, Servertime } from '../cart.service';
+import { GalaxyMarket } from '../galaxy.model';
+import { CartService, Shipping } from '../cart.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CartComponent implements OnInit {
 
   items: Product[];
-  token: Galaxy.MarketSymbols;
+  token: GalaxyMarket.Symbols;
   shippings: Shipping[];
   servertime: string;
   public checkoutForm: FormGroup;
@@ -57,7 +57,7 @@ export class CartComponent implements OnInit {
   }
   
   getMarketSymbols() {
-    this.cartService.getMarketSymbols().subscribe((token: Galaxy.MarketSymbols) => {
+    this.cartService.getMarketSymbols().subscribe((token: GalaxyMarket.Symbols) => {
       this.token = token;
     });
   }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product.model';
-import { Galaxy } from './galaxy.model';
+import { GalaxyMarket } from './galaxy.model';
 import { HttpClient ,HttpHeaders, HttpClientModule, HttpRequest, HttpParams ,  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { core } from '@angular/compiler';
@@ -14,10 +14,10 @@ import { url } from 'inspector';
 export class CartService {
   // [x: string]: any;
   items: Product[] = [];
-  token: Galaxy.MarketSymbols;
+  token: GalaxyMarket.Symbols;
   
 
-  constructor(private http: HttpClient, private http2: HttpClient) {
+  constructor(private http: HttpClient) {
     // const url = 'https://api.bitkub.com/api/market/symbols';
 
     // http.head(url , { 
@@ -61,17 +61,13 @@ export class CartService {
     return this.http.get(url);
   }
 
-  getMarketSymbols(): Observable<Galaxy.MarketSymbols> {
+  getMarketSymbols(): Observable<GalaxyMarket.Symbols> {
     const url = 'https://api.bitkub.com/api/market/symbols';
-    return this.http.get<Galaxy.MarketSymbols>(url);
+    return this.http.get<GalaxyMarket.Symbols>(url);
   }
 }
 
 export class Shipping {
   type: string;
   price: number;
-}
-
-export class Servertime {
-  timestamp: string;
 }

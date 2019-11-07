@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TestGetdataComponent } from './test-getdata/test-getdata.component';
 import { ComponentHtmlTableComponent } from './component-html-table/component-html-table.component';
+import {DatePipe} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,9 @@ import { ComponentHtmlTableComponent } from './component-html-table/component-ht
       }
     ])
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
