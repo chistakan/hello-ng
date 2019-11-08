@@ -108,7 +108,7 @@ label {
 
 app-top-bar1 {
   width: 100%;
-  height: 68px;
+  height: 50px;
   background-color: #1976d2;
   padding: 16px;
   display: flex;
@@ -120,6 +120,13 @@ app-top-bar1 {
 app-top-bar1 h1 {
   color: white;
   margin: 0;
+}
+
+/* Manu Bar Bar */
+app-manu-bar {
+  background-color: #1976d2;
+  display: block;
+  width: 60px;
 }
 
 /* Checkout Cart, Shipping Prices */

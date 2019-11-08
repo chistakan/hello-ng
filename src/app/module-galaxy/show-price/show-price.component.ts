@@ -66,9 +66,4 @@ export class ShowPriceComponent implements OnInit {
     });
   }
 
-  getPrice() {
-    // this.cartService.getShipping().subscribe((shippings: Shipping[]) => {
-    //   this.shippings = shippings;
-    // });
-  }
 }

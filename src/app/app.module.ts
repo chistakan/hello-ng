@@ -11,7 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TestGetdataComponent } from './test-getdata/test-getdata.component';
 import { ComponentHtmlTableComponent } from './component-html-table/component-html-table.component';
-import {DatePipe} from '@angular/common';
+import { DatePipe } from '@angular/common';
+import { ManuBarComponent } from './manu-bar/manu-bar.component';
+import { DiffPriceComponent } from './diff-price/diff-price.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {DatePipe} from '@angular/common';
     CartComponent,
     ProductNotifyComponent,
     TestGetdataComponent,
-    ComponentHtmlTableComponent
+    ComponentHtmlTableComponent,
+    ManuBarComponent,
+    DiffPriceComponent
   ],
   imports: [
     BrowserModule,

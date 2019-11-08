@@ -1,0 +1,66 @@
+<p>
+  diff-price works!
+</p>
+<p>show</p>
+<table style="width:100%">
+    <caption>{{strservertime}}</caption>
+    <tr>
+        <th>NAME</th>
+        <th>LAST</th>
+        <th>24hr</th>
+    </tr>
+    <tr>
+        <td>BTC</td>
+        <td>{{ticker?.THB_BTC?.last}}</td>
+        <td>{{ticker?.THB_BTC?.percentChange}}</td>
+    </tr>
+    <tr>
+        <td>ETH</td>
+        <td>{{ticker?.THB_ETH?.last}}</td>
+        <td>{{ticker?.THB_ETH?.percentChange}}</td>
+    </tr>
+    <tr>
+        <td>XRP</td>
+        <td>{{ticker?.THB_XRP?.last}}</td>
+        <td>{{ticker?.THB_XRP?.percentChange}}</td>
+    </tr>
+    <tr>
+        <td>BCH</td>
+        <td>{{ticker?.THB_BCH?.last}}</td>
+        <td>{{ticker?.THB_BCH?.percentChange}}</td>
+    </tr>
+    <tr>
+        <td>LTC</td>
+        <td>{{ticker?.THB_LTC?.last}}</td>
+        <td>{{ticker?.THB_LTC?.percentChange}}</td>
+    </tr>
+    <tr>
+        <td>BSV</td>
+        <td>{{ticker?.THB_BSV?.last}}</td>
+        <td>{{ticker?.THB_BSV?.percentChange}}</td>
+    </tr>
+    <tr>
+        <td>XLM</td>
+        <td>{{ticker?.THB_XLM?.last}}</td>
+        <td>{{ticker?.THB_XLM?.percentChange}}</td>
+    </tr>
+    <tr>
+        <td>ADA</td>
+        <td>{{ticker?.THB_ADA?.last}}</td>
+        <td>{{ticker?.THB_ADA?.percentChange}}</td>
+    </tr>
+    <tr>
+        <td>OMG</td>
+        <td>{{ticker?.THB_OMG?.last}}</td>
+        <td>{{ticker?.THB_OMG?.percentChange}}</td>
+    </tr>
+    <tr>
+        <td><button (click)='startTimer()'>Start</button></td>
+        <td></td>
+        <td><button (click)='pauseTimer()'>Pause</button></td>
+    </tr>
+</table>
+
+
+
+<p>{{timeLeft}} Seconds Left....</p>
