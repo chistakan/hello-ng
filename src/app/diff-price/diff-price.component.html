@@ -7,51 +7,77 @@
     <tr id="t01">
         <th colspan="2">BITKUB</th>
         <th></th>
+        <th colspan="2">BITFINEX</th>
     </tr>
     <tr>
         <th>NAME</th>
         <th>LAST</th>
         <th>Diff</th>
+        <th>LAST</th>
+        <th>NAME</th>
     </tr>
     <tr>
         <td>BTC</td>
         <td>{{ticker?.THB_BTC?.last}}</td>
+        <td>{{(ticker?.THB_BTC?.last/(tickerBitfinex[0][1]*ticker?.THB_USDT?.last))-1}}</td>
+        <td>{{tickerBitfinex[0][1]*ticker?.THB_USDT?.last}}</td>
+        <td>{{tickerBitfinex[0][0]}}</td>
     </tr>
     <tr>
         <td>ETH</td>
         <td>{{ticker?.THB_ETH?.last}}</td>
+        <td>{{(ticker?.THB_ETH?.last/(tickerBitfinex[3][1]*ticker?.THB_USDT?.last))-1}}</td>
+        <td>{{tickerBitfinex[3][1]*ticker?.THB_USDT?.last}}</td>
+        <td>{{tickerBitfinex[3][0]}}</td>
     </tr>
     <tr>
         <td>XRP</td>
         <td>{{ticker?.THB_XRP?.last}}</td>
+        <td>{{(ticker?.THB_XRP?.last/(tickerBitfinex[17][1]*ticker?.THB_USDT?.last))-1}}</td>
+        <td>{{tickerBitfinex[17][1]*ticker?.THB_USDT?.last}}</td>
+        <td>{{tickerBitfinex[17][0]}}</td>
     </tr>
     <tr>
         <td>BCH</td>
         <td>{{ticker?.THB_BCH?.last}}</td>
+        <td>{{(ticker?.THB_BCH?.last/(tickerBitfinex[312][1]*ticker?.THB_USDT?.last))-1}}</td>
+        <td>{{tickerBitfinex[312][1]*ticker?.THB_USDT?.last}}</td>
+        <td>{{tickerBitfinex[312][0]}}</td>
     </tr>
     <tr>
         <td>LTC</td>
         <td>{{ticker?.THB_LTC?.last}}</td>
+        <td>{{(ticker?.THB_LTC?.last/(tickerBitfinex[1][1]*ticker?.THB_USDT?.last))-1}}</td>
+        <td>{{tickerBitfinex[1][1]*ticker?.THB_USDT?.last}}</td>
+        <td>{{tickerBitfinex[1][0]}}</td>
     </tr>
     <tr>
         <td>BSV</td>
         <td>{{ticker?.THB_BSV?.last}}</td>
+        <td>{{(ticker?.THB_BSV?.last/(tickerBitfinex[310][1]*ticker?.THB_USDT?.last))-1}}</td>
+        <td>{{tickerBitfinex[310][1]*ticker?.THB_USDT?.last}}</td>
+        <td>{{tickerBitfinex[310][0]}}</td>
     </tr>
     <tr>
         <td>XLM</td>
         <td>{{ticker?.THB_XLM?.last}}</td>
-    </tr>
-    <tr>
-        <td>ADA</td>
-        <td>{{ticker?.THB_ADA?.last}}</td>
+        <td>{{(ticker?.THB_XLM?.last/(tickerBitfinex[163][1]*ticker?.THB_USDT?.last))-1}}</td>
+        <td>{{tickerBitfinex[163][1]*ticker?.THB_USDT?.last}}</td>
+        <td>{{tickerBitfinex[163][0]}}</td>
     </tr>
     <tr>
         <td>OMG</td>
         <td>{{ticker?.THB_OMG?.last}}</td>
+        <td>{{(ticker?.THB_OMG?.last/(tickerBitfinex[28][1]*ticker?.THB_USDT?.last))-1}}</td>
+        <td>{{tickerBitfinex[28][1]*ticker?.THB_USDT?.last}}</td>
+        <td>{{tickerBitfinex[28][0]}}</td>
+    </tr>
+    <tr>
+        <td>USDT</td>
+        <td>{{ticker?.THB_USDT?.last}}</td>
     </tr>
     <tr>
         <td><button (click)='startTimer()'>Start</button></td>
-        <td></td>
         <td><button (click)='pauseTimer()'>Pause</button></td>
     </tr>
 </table>

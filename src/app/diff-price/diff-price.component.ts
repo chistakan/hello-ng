@@ -16,6 +16,7 @@ export class DiffPriceComponent implements OnInit {
   date: Date;
   timeLeft: number = 60;
   interval;
+  tickerBitfinex: [];
   
   constructor(
     private galaxyService: GalaxyService,
@@ -24,15 +25,26 @@ export class DiffPriceComponent implements OnInit {
 
   ngOnInit() {
     this.getServerTime();
-    this.getMarketTicker();
+    this.getMarketTickerBitkub();
+    this.getMarketTickerBitfinex();
   }
-
-  getMarketTicker() {
-    this.galaxyService.getMarketTicker().subscribe((ticker: GalaxyMarket.Ticker) => {
-      this.ticker = ticker;
-    });
-  }
-
+  
+    getMarketTickerBitkub() {
+      this.galaxyService.getMarketTickerBitkub().subscribe((ticker: GalaxyMarket.Ticker) => {
+        this.ticker = ticker;
+      });
+    }
+  
+    getMarketTickerBitfinex() {
+      this.galaxyService.getMarketTickerBitfinex().subscribe((tickerBitfinex: []) => {
+        this.tickerBitfinex = tickerBitfinex;
+        var found = tickerBitfinex.find(function(element) {
+          return element == 0;
+        });
+      });
+      
+    }
+  
   getServerTime() {
     this.galaxyService.getServerTime().subscribe((servertime: number) => {
       this.servertime = servertime;
@@ -50,6 +62,10 @@ export class DiffPriceComponent implements OnInit {
         this.timeLeft--;
       } else {
         this.timeLeft = 60;
+      }
+      if (this.timeLeft%10==0) {
+        this.getMarketTickerBitfinex();
+        this.getMarketTickerBitkub();
       }
     },1000)
   }

@@ -17,6 +17,7 @@ export class ShowPriceComponent implements OnInit {
   date: Date;
   timeLeft: number = 60;
   interval;
+  tickerBitfinex: any;
 
   constructor(
     private galaxyService: GalaxyService,
@@ -26,7 +27,8 @@ export class ShowPriceComponent implements OnInit {
   ngOnInit() {
     this.getServerTime();
     // this.getMarketSymbols();
-    this.getMarketTicker();
+    // this.getMarketTicker();
+    this.getMarketTickerBitfinex();
   }
 
   startTimer() {
@@ -60,9 +62,15 @@ export class ShowPriceComponent implements OnInit {
     });
   }
 
-  getMarketTicker() {
-    this.galaxyService.getMarketTicker().subscribe((ticker: GalaxyMarket.Ticker) => {
+  getMarketTickerBitkub() {
+    this.galaxyService.getMarketTickerBitkub().subscribe((ticker: GalaxyMarket.Ticker) => {
       this.ticker = ticker;
+    });
+  }
+
+  getMarketTickerBitfinex() {
+    this.galaxyService.getMarketTickerBitfinex().subscribe((tickerBitfinex: any) => {
+      this.tickerBitfinex = tickerBitfinex;
     });
   }
 

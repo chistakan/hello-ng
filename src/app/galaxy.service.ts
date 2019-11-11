@@ -11,6 +11,7 @@ export class GalaxyService {
     // Symbols: GalaxyMarket.Symbols;
 
     private url_bitkub_api = 'https://api.bitkub.com/api';
+    private url_bitfinex_api = 'https://api-pub.bitfinex.com/v2/tickers?symbols=ALL';
 
     constructor(private http: HttpClient){
 
@@ -26,9 +27,14 @@ export class GalaxyService {
         return this.http.get<GalaxyMarket.Symbols>(this.url_bitkub_api + url);
     }
 
-    getMarketTicker(): Observable<GalaxyMarket.Ticker> {
+    getMarketTickerBitkub(): Observable<GalaxyMarket.Ticker> {
         const url = '/market/ticker';
         return this.http.get<GalaxyMarket.Ticker>(this.url_bitkub_api + url);
+    }
+
+    getMarketTickerBitfinex(): Observable<[]> {
+        const url = '/market/ticker';
+        return this.http.get<[]>(this.url_bitfinex_api);
     }
 
     // getMarketTrades(): Observable<GalaxyMarket.Trades> {
