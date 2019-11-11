@@ -60,6 +60,10 @@ import { DiffPriceComponent } from './diff-price/diff-price.component';
       {
         path: 'galaxy',
         loadChildren: 'src/app/module-galaxy/module-galaxy.module#ModuleGalaxyModule'
+      },
+      {
+        path: 'diffprice',
+        component: DiffPriceComponent
       }
     ])
   ],

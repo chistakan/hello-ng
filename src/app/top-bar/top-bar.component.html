@@ -1,5 +1,15 @@
 
 
+<div class="dropdown">menu 
+  <!-- <button [routerLink]="['/']" class="dropbtn">Home</button> -->
+  <i [routerLink]="['/']" class="material-icons">settings_applications</i>
+  <div class="dropdown-content">
+    <a [routerLink]="['/example']">HTTP Example</a>
+    <a [routerLink]="['/galaxy/show']">Go to Galaxy</a>
+    <a [routerLink]="['/diffprice']">Diff Price</a>
+  </div>
+</div>
+
 <style>
   /* Style The Dropdown Button */
   .dropbtn {
@@ -15,6 +25,7 @@
     .dropdown {
       position: relative;
       display: inline-block;
+      color: white;
     }
     
     /* Dropdown Content (Hidden by Default) */
@@ -48,16 +59,9 @@
       background-color: #3e8e41;
     }
 </style>
+
 <a [routerLink]="['/cart']" class="button fancy-button">
   <i class="material-icons">shopping_cart</i>Checkout
 </a>
     
-    <div class="dropdown">
-      <!-- <button [routerLink]="['/']" class="dropbtn">Home</button> -->
-      <i [routerLink]="['/']" class="material-icons">settings_applications</i>
-      <div class="dropdown-content">
-        <a [routerLink]="['/example']">HTTP Example</a>
-        <a [routerLink]="['/galaxy/show']">Go to Galaxy</a>
-      </div>
-    </div>
     

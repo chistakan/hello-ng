@@ -17,3 +17,13 @@ td {
 table {
     border-spacing: 5px;
 }
+
+tr#t01 {
+    width: 100%;
+    /* background-color: #f1f1c1; */
+    background-color: black;
+}
+
+tr#t01 th {
+    color: white;
+}
