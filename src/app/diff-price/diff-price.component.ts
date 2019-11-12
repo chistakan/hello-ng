@@ -14,6 +14,8 @@ export class DiffPriceComponent implements OnInit {
   strservertime: string;
   ticker: GalaxyMarket.Ticker;
   date: Date;
+  timeLeft: number = 60;
+  interval;
   
   constructor(
     private galaxyService: GalaxyService,
@@ -21,6 +23,8 @@ export class DiffPriceComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getServerTime();
+    this.getMarketTicker();
   }
 
   getMarketTicker() {
@@ -37,5 +41,20 @@ export class DiffPriceComponent implements OnInit {
       // console.log(this.datepipe.transform(this.date,"dd-MM-yyyy"));
       this.strservertime = this.datepipe.transform(this.date,"H:mm:ss");
     });
+  }
+
+  startTimer() {
+    this.interval = setInterval(() => {
+      this.getServerTime();
+      if(this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.timeLeft = 60;
+      }
+    },1000)
+  }
+
+  pauseTimer() {
+    clearInterval(this.interval);
   }
 }
